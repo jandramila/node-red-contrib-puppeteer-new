@@ -1,20 +1,20 @@
 {
-  "name": "node-red-contrib-puppeteer-new",
-  "version": "0.3.2",
-  "description": "NodeRED nodes to control a headless chrome with puppeteer",
+  "name": "node-red-contrib-puppeteer-new-extended",
+  "version": "0.0.1",
+  "description": "NodeRED nodes to control a headless chrome with puppeteer.",
   "main": "index.js",
   "scripts": {},
-  "author": "Roy Chan <d0uuub@gmail.com>",
+  "author": "Florent Pastor <flopastor06@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "puppeteer": "^13.5.1"
   },
   "bugs": {
-    "url": "https://github.com/d0uub/node-red-contrib-puppeteer-new/issues"
+    "url": "https://github.com/earendil06/node-red-contrib-puppeteer-new/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/d0uub/node-red-contrib-puppeteer-new"
+    "url": "https://github.com/earendil06/node-red-contrib-puppeteer-new"
   },
   "keywords": [
     "chrome",
