@@ -6,7 +6,7 @@ module.exports = function (RED) {
     RED.nodes.createNode(this, config)
     config.timeout = config.timeout == ""?0:config.timeout
     config.slowMo = config.slowMo == ""?0:config.slowMo
-    config.debugport = config.debugport == ""?0:config.debugport
+    config.debugport = config.debugport == ""?0:config.debugport 
     // Retrieve the config node
     this.on('input', async function (msg) {
       try {
@@ -30,6 +30,7 @@ module.exports = function (RED) {
       $("#node-input-debugport").val(config.debugport)
       $("#node-input-devtools").val(config.devtools)
       $("#node-input-name").val(config.name)
+      $("#node-input-executable").val(config.executablePath)
     }
   }
   RED.nodes.registerType('puppeteer-browser-launch', PuppeteerBrowserLaunch)
