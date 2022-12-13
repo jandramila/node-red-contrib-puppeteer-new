@@ -11,7 +11,10 @@ module.exports = function (RED) {
     this.on('input', async function (msg) {
       try {
         this.status({fill:"green",shape:"dot",text:"Launching..."});
-        msg.puppeteer = {browser:await puppeteer.launch( { timeout: config.timeout, slowMo: config.slowMo, executablePath: config.executablePath, headless: config.headless, debugport: config.debugport, devtools:config.devtools, defaultViewport: null, ignoreHTTPSErrors: true } )}
+        msg.puppeteer = {browser:await puppeteer.launch( { 
+          args: ['--no-sandbox',
+        '--disable-setuid-sandbox'],
+          timeout: config.timeout, slowMo: config.slowMo, headless: config.headless, debugport: config.debugport, devtools:config.devtools, defaultViewport: null, ignoreHTTPSErrors: true } )}
         msg.puppeteer.page = (await msg.puppeteer.browser.pages())[0]
         this.status({fill:"green",shape:"ring",text:"Launched"});
         this.send(msg)
@@ -30,7 +33,6 @@ module.exports = function (RED) {
       $("#node-input-debugport").val(config.debugport)
       $("#node-input-devtools").val(config.devtools)
       $("#node-input-name").val(config.name)
-      $("#node-input-executable").val(config.executablePath)
     }
   }
   RED.nodes.registerType('puppeteer-browser-launch', PuppeteerBrowserLaunch)
